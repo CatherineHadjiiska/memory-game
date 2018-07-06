@@ -5,6 +5,8 @@
 const icons = ["fa fa-diamond", "fa fa-diamond", "fa fa-paper-plane-o", "fa fa-paper-plane-o", "fa fa-anchor", "fa fa-anchor", "fa fa-bolt", "fa fa-bolt", "fa fa-cube", "fa fa-cube", "fa fa-leaf", "fa fa-leaf", "fa fa-bicycle", "fa fa-bicycle", "fa fa-bomb", "fa fa-bomb"]; 
 const cardsContainer=document.querySelector(".deck");
 
+
+// initiate the game 
 function init() {
 shuffle(icons);// shuffles before initialization
 for (let i = 0; i < icons.length; i++){
@@ -19,7 +21,7 @@ for (let i = 0; i < icons.length; i++){
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
-    let counter = array.length; //typo
+    let counter = array.length; 
     while(counter > 0) {
     	let index = Math.floor(Math.random() * counter);
     	counter--;
@@ -32,4 +34,69 @@ function shuffle(array) {
     return array;
      
 }
+
+function click(card){
+
+	//Click event
+	card.addEventListener("click", function() {
+
+		const currentCard = this;
+		const previousCard = openedCards[0];
+
+		if (firstClick) {
+
+			
+
+			firstClick = false;
+		}
+
+		//opened card
+		if(openedCards.length === 1) {
+
+			card.classList.add("open", "show", "disable");
+			openedCards.push(this);
+
+			//compare opened cards 
+			compare(currentCard, previousCard);		
+
+		} else {
+			currentCard.classList.add("open", "show", "disable");
+			openedCards.push(this);
+		}
+	});
+}
+
+// compare cards
+
+function compare(currentCard, previousCard) {
+	if(currentCard.innerHTML === previousCard.innerHTML) {
+
+				currentCard.classList.add("match");
+				previousCard.classList.add("match");
+
+				matchedCards.push(currentCard, previousCard); 
+
+				openedCards = [];
+
+				//check if game is over
+
+
+				
+
+
+				} else {
+
+				setTimeout(function() {
+				currentCard.classList.remove("open", "show", "disable");
+				previousCard.classList.remove("open", "show", "disable");
+				openedCards = [];
+			}, 500);
+			}
+
+			//add move, update rating
+
+
+		
+			}
+
 init();
