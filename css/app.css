@@ -149,3 +149,63 @@ styles for modal
       transition: all 300ms ease; }
       .modal .inner button:hover {
         box-shadow: none; }
+    }
+}
+
+
+/* 
+responsive container
+*/
+@media only screen and (min-width: 750px) {
+    .deck {
+        width: 660px;
+        min-height: 680px;
+        padding: 32px;
+    }
+    .deck .card {
+        height: 125px;
+        width: 125px;
+    }
+    .score-panel {
+        font-size: 24px;
+        width: 600px;
+    }
+}
+
+@media only screen and (max-width: 749px) {
+    .deck {
+        width: 450px;
+        min-height: 450px;
+        padding: 24px;
+    }
+    .deck .card {
+        height: 85px;
+        width: 85px;
+    }
+    .score-panell {
+        font-size: 16px;
+        width: 420px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .deck {
+        width: 300px;
+        min-height: 300px;
+        padding: 18px;
+    }
+    .deck. card {
+        height: 55px;
+        width: 55px;
+    }
+    .deck .card.show {
+        font-size: 24px;
+    }
+    .deck .card.match {
+        font-size: 24px;
+    }
+    .score-panel {
+        font-size: 14px;
+        width: 285px;
+    }
+}
