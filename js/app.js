@@ -1,12 +1,26 @@
 /*
  * Create a list that holds all of your cards
  */
-
 const icons = ["fa fa-diamond", "fa fa-diamond", "fa fa-paper-plane-o", "fa fa-paper-plane-o", "fa fa-anchor", "fa fa-anchor", "fa fa-bolt", "fa fa-bolt", "fa fa-cube", "fa fa-cube", "fa fa-leaf", "fa fa-leaf", "fa fa-bicycle", "fa fa-bicycle", "fa fa-bomb", "fa fa-bomb"]; 
+const movesContainer = document.querySelector(".moves");
+movesContainer.innerHTML = 0;
 const cardsContainer=document.querySelector(".deck");
+const modal=document.querySelector(".modal");
+const starsContainer = document.querySelector(".stars");
+starsContainer.innerHTML = '<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>'
 
 
-// initiate the game 
+let openedCards = [];
+let matchedCards = [];
+let firstClick = true;
+let minute = 0;
+let second = 0;
+let timer = document.querySelector(".timer");
+let moves = 0;
+
+
+// initiate the game
+
 function init() {
 shuffle(icons);// shuffles before initialization
 for (let i = 0; i < icons.length; i++){
@@ -21,7 +35,7 @@ for (let i = 0; i < icons.length; i++){
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
-    let counter = array.length; 
+    let counter = array.length; //typo
     while(counter > 0) {
     	let index = Math.floor(Math.random() * counter);
     	counter--;
@@ -45,7 +59,7 @@ function click(card){
 
 		if (firstClick) {
 
-			
+			startTimer();
 
 			firstClick = false;
 		}
@@ -100,6 +114,8 @@ function compare(currentCard, previousCard) {
 		
 			}
 
+//game over
+
 function isOver() {
 	if(matchedCards.length === icons.length) {
 		clearInterval(interval);
@@ -109,11 +125,33 @@ function isOver() {
 	}
 }
 
+// pop-up modal and display functions
+
+function gameOverModal() {
+
+	modal.style.top = "0";
+
+
+	document.getElementById("total_rate").innerHTML = starsContainer;
+
+
+	stopTimer();
+	document.getElementById("total_time").innerHTML = endTime;
+
+
+	const totalMoves = document.querySelector("#total_moves");
+	totalMoves.innerHTML = moves + 1;
+
+	
+}
+
+
 function addMove() {
 	moves++;
 	movesContainer.innerHTML = moves;
 
 }
+
 
 function rating() {
 	switch(moves) {
@@ -127,6 +165,8 @@ function rating() {
 	}
 
 }
+
+
 
 var interval;
 function startTimer() {
@@ -144,6 +184,8 @@ function stopTimer() {
 	clearInterval(interval);
 	endTime = timer.innerHTML;
 }
+
+
 
 const restartBtn = document.querySelector(".restart");
 restartBtn.addEventListener("click", function() {
