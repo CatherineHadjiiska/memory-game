@@ -81,7 +81,7 @@ function compare(currentCard, previousCard) {
 				//check if game is over
 
 
-				
+				isOver();
 
 
 				} else {
@@ -95,8 +95,24 @@ function compare(currentCard, previousCard) {
 
 			//add move, update rating
 
+			addMove();
+
 
 		
 			}
 
+function isOver() {
+	if(matchedCards.length === icons.length) {
+		clearInterval(interval);
+		
+
+		gameOverModal();
+	}
+}
+
+function addMove() {
+	moves++;
+	movesContainer.innerHTML = moves;
+
+}
 init();
