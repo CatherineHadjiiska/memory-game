@@ -166,4 +166,25 @@ restartBtnModal.addEventListener("click", function() {
 	
 });
 
+function resetValues() {
+	matchedCards = [];
+	moves = 0;
+	movesContainer.innerHTML = "";
+	starsContainer.innerHTML = '<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>'
+	timer.innerHTML = "0 min 0sec";
+	stopTimer();
+	firstClick = true; 
+	minute = 0;
+	second = 0;
+
+}
+
+function newGame() {
+	cardsContainer.innerHTML = "";
+
+	resetValues();
+
+	init();
+}
+
 init();
