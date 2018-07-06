@@ -96,6 +96,7 @@ function compare(currentCard, previousCard) {
 			//add move, update rating
 
 			addMove();
+			rating();
 
 
 		
@@ -115,4 +116,18 @@ function addMove() {
 	movesContainer.innerHTML = moves;
 
 }
+
+function rating() {
+	switch(moves) {
+		case 14:
+		starsContainer.innerHTML = '<li><i class="fa fa-star"></i></li><li><i class="fa fa-star"></i></li>'
+		break; 
+
+		case 20:
+		starsContainer.innerHTML = '<li><i class="fa fa-star"></i></li>'
+		break;
+	}
+
+}
+
 init();
