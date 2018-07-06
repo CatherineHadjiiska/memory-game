@@ -97,8 +97,6 @@ function compare(currentCard, previousCard) {
 
 			addMove();
 			rating();
-
-
 		
 			}
 
@@ -128,6 +126,23 @@ function rating() {
 		break;
 	}
 
+}
+
+var interval;
+function startTimer() {
+	interval = setInterval(function(){
+		timer.innerHTML = minute+"min "+second+"sec";
+		second++;
+		if(second == 60){
+			minute++;
+			second=0;
+		}
+	},1000);
+}
+
+function stopTimer() {
+	clearInterval(interval);
+	endTime = timer.innerHTML;
 }
 
 init();
