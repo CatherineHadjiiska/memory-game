@@ -49,6 +49,8 @@ function shuffle(array) {
      
 }
 
+// Click cards function
+
 function click(card){
 
 	//Click event
@@ -132,7 +134,7 @@ function gameOverModal() {
 	modal.style.top = "0";
 
 
-	document.getElementById("total_rate").innerHTML = starsContainer;
+	document.getElementById("total_rate").innerHTML = starsContainer.innerHTML;
 
 
 	stopTimer();
@@ -145,6 +147,7 @@ function gameOverModal() {
 	
 }
 
+// Add moves 
 
 function addMove() {
 	moves++;
@@ -152,6 +155,7 @@ function addMove() {
 
 }
 
+// rating
 
 function rating() {
 	switch(moves) {
@@ -166,7 +170,7 @@ function rating() {
 
 }
 
-
+// Timer
 
 var interval;
 function startTimer() {
@@ -180,21 +184,27 @@ function startTimer() {
 	},1000);
 }
 
+// Stop timer function
+
 function stopTimer() {
 	clearInterval(interval);
 	endTime = timer.innerHTML;
 }
 
 
-
+// Reset game button 
 const restartBtn = document.querySelector(".restart");
 restartBtn.addEventListener("click", function() {
 	cardsContainer.innerHTML = "";
+
+	//launch new game
 
 	newGame();
 
 	
 });
+
+// Play again button from modal
 
 const restartBtnModal = document.querySelector(".play-again");
 restartBtnModal.addEventListener("click", function() {
@@ -203,10 +213,14 @@ restartBtnModal.addEventListener("click", function() {
 	//hide modal
 	modal.style.top = "-150%";
 
+	//launch new game
+
 	newGame();
 
 	
 });
+
+// reset values function to reset game
 
 function resetValues() {
 	matchedCards = [];
