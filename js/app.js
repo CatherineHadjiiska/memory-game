@@ -145,4 +145,25 @@ function stopTimer() {
 	endTime = timer.innerHTML;
 }
 
+const restartBtn = document.querySelector(".restart");
+restartBtn.addEventListener("click", function() {
+	cardsContainer.innerHTML = "";
+
+	newGame();
+
+	
+});
+
+const restartBtnModal = document.querySelector(".play-again");
+restartBtnModal.addEventListener("click", function() {
+	cardsContainer.innerHTML = "";
+
+	//hide modal
+	modal.style.top = "-150%";
+
+	newGame();
+
+	
+});
+
 init();
