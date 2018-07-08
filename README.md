@@ -5,7 +5,7 @@ A Matching Cards Game built with Javascript and no external libraries.
 
 ## How to Play?
 * Click on a card to see an image
-* There are 16 pairs of cards, how fast can you find all pairs?
+* Match cards with less moves. How fast can you find all matching cards?
 
 ## Features
 
@@ -14,7 +14,13 @@ A Matching Cards Game built with Javascript and no external libraries.
 * Timer
 * Restart/Play Again buttons
 
-## To fix
+## Dependency
+Built with: 
+Javasctipt
+Additiona:
+Font Awesome: https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css
+Google Fonts: https://fonts.googleapis.com/css?family=Coda
 
-* Star rating display in modal 
+Shuffle function from http://stackoverflow.com/a/2450976
+
 
