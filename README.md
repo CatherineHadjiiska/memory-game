@@ -15,9 +15,8 @@ A Matching Cards Game built with Javascript and no external libraries.
 * Restart/Play Again buttons
 
 ## Dependency
-Built with: 
-Javasctipt
-Additiona:
+Built with Javasctipt.
+Additional:
 Font Awesome: https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css
 Google Fonts: https://fonts.googleapis.com/css?family=Coda
 
