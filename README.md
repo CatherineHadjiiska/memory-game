@@ -2,6 +2,7 @@
 
 A Matching Cards Game built with Javascript and no external libraries. 
 
+[Live Preview](https://catherinehadjiiska.github.io/memory-game/)
 
 ## How to Play?
 * Click on a card to see an image
